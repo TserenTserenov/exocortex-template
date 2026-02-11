@@ -155,7 +155,7 @@ FPF (1-й) → SPF (2-й) → Pack (3-й, знания) → Downstream (4-й, м
 | Протокол | Владелец | Где описан |
 |----------|----------|-----------|
 | Open, Work, Close | Claude Code (сессия) | Этот файл |
-| Strategy Session | Стратег (launchd, Пн) | DS-strategist/prompts/strategy.md |
+| Подготовка к сессии + Стратегирование | Стратег (launchd, Пн 4:00) | DS-strategist/prompts/session-prep.md |
 | Day-Plan | Стратег (launchd, Вт-Вс) | DS-strategist/prompts/day-plan.md |
 | Day-Close | Стратег (ручной, по запросу) | DS-strategist/prompts/day-close.md |
 | Week-Review | Стратег (launchd, Вс) | DS-strategist/prompts/week-review.md |

@@ -1,11 +1,11 @@
 Выполни сценарий Week Review для агента Стратег.
 
 > **Триггер:** Автоматический — Пн 00:00 (полночь Вс→Пн, launchd).
-> Создаёт WeekReport. Служит входом для Strategy Session.
+> Создаёт WeekReport. Служит входом для session-prep.
 
 ## Контекст
 
-- **WeekPlan:** ~/Github/my-strategy/current/WeekPlan W*.md
+- **WeekPlan:** ~/Github/DS-strategy/current/WeekPlan W*.md
 
 ## Алгоритм
 
@@ -35,6 +35,6 @@ git -C ~/Github/<repo> log --since="last monday 00:00" --until="today 00:00" --o
 ### 4. Сохранение
 
 1. Создай `current/WeekReport W{N} YYYY-MM-DD.md`
-2. Закоммить в my-strategy
+2. Закоммить в DS-strategy
 
-Результат: WeekReport в `current/` — как вход для Strategy Session.
+Результат: WeekReport в `current/` — как вход для session-prep.
