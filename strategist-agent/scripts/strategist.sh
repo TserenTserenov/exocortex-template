@@ -68,8 +68,14 @@ run_claude() {
     if git -C "$WORKSPACE" diff --quiet origin/main..HEAD 2>/dev/null; then
         log "No unpushed commits"
     else
+        git -C "$WORKSPACE" pull --rebase >> "$LOG_FILE" 2>&1 && log "Pulled (rebase)" || log "WARN: pull --rebase failed"
         git -C "$WORKSPACE" push >> "$LOG_FILE" 2>&1 && log "Pushed to GitHub" || log "WARN: git push failed"
     fi
+
+    # Очистить staging area после Claude сессии (предотвращает staging leak в следующие скрипты)
+    # НЕ трогаем working tree — только unstage orphaned changes
+    git -C "$WORKSPACE" reset --quiet 2>/dev/null || true
+    log "Cleared staging area after Claude session"
 
     # macOS notification
     local summary

@@ -101,10 +101,9 @@ git -C {{WORKSPACE_DIR}}/<repo> log --since="yesterday 00:00" --until="today 00:
 ### 6. Сохранение
 
 1. Если в `current/` есть предыдущий `DayPlan *.md`:
-   a. Скопируй его в `archive/day-plans/`
-   b. Удали оригинал из `current/`
+   - Используй `git mv "current/DayPlan YYYY-MM-DD.md" "archive/day-plans/"` (атомарно стейджит удаление + добавление в archive)
 2. Создай новый файл: `current/DayPlan YYYY-MM-DD.md` (дата = сегодня)
-3. Закоммить в DS-strategy (WeekPlan + DayPlan)
+3. Закоммить все изменения: `git add current/ archive/day-plans/ && git commit`
 
 **Шаблон DayPlan:**
 
